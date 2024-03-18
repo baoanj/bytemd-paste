@@ -1,0 +1,33 @@
+{
+  "name": "bytemd-paste",
+  "version": "1.0.1",
+  "description": "支持原格式粘贴的 Markdown 编辑器",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baoanj/bytemd-paste"
+  },
+  "homepage": "https://github.com/baoanj/bytemd-paste#readme",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [
+    "bytemd",
+    "paste",
+    "markdown",
+    "editor"
+  ],
+  "author": "baoanj",
+  "license": "MIT",
+  "dependencies": {
+    "bytemd": "^1.21.0",
+    "turndown": "^7.1.2",
+    "turndown-plugin-gfm": "^1.0.2"
+  },
+  "devDependencies": {
+    "esbuild-loader": "^4.1.0",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
