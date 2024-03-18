@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BytemdPaste - Markdown 编辑器</title>
+  <link rel="stylesheet" href="https://unpkg.com/bytemd/dist/index.css" />
+  <link rel="stylesheet" href="https://unpkg.com/github-markdown-css/github-markdown.css" />
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js/styles/github.min.css" />
+</head>
+
+<body>
+  <script src="https://unpkg.com/@bytemd/plugin-gfm"></script>
+  <script src="https://unpkg.com/@bytemd/plugin-highlight"></script>
+  <script src="https://unpkg.com/bytemd-paste"></script>
+  <!-- <script src="./index.umd.js"></script> -->
+  <script>
+    const editor = BytemdPaste({
+      target: document.body,
+      props: {
+        value: '# BytemdPaste',
+        plugins: [bytemdPluginGfm({
+          locale: {
+            "strike": "删除线",
+            "strikeText": "文本",
+            "table": "表格",
+            "tableHeading": "标题",
+            "task": "任务列表",
+            "taskText": "待办事项"
+          }
+        }), bytemdPluginHighlight()],
+        locale: {
+          "bold": "粗体",
+          "boldText": "粗体文本",
+          "cheatsheet": "Markdown 语法",
+          "closeHelp": "关闭帮助",
+          "closeToc": "关闭目录",
+          "code": "代码",
+          "codeBlock": "代码块",
+          "codeLang": "编程语言",
+          "codeText": "代码",
+          "exitFullscreen": "退出全屏",
+          "exitPreviewOnly": "恢复默认",
+          "exitWriteOnly": "恢复默认",
+          "fullscreen": "全屏",
+          "h1": "一级标题",
+          "h2": "二级标题",
+          "h3": "三级标题",
+          "h4": "四级标题",
+          "h5": "五级标题",
+          "h6": "六级标题",
+          "headingText": "标题",
+          "help": "帮助",
+          "hr": "分割线",
+          "image": "图片",
+          "imageAlt": "alt",
+          "imageTitle": "图片描述",
+          "italic": "斜体",
+          "italicText": "斜体文本",
+          "limited": "已达最大字符数限制",
+          "lines": "行数",
+          "link": "链接",
+          "linkText": "链接描述",
+          "ol": "有序列表",
+          "olItem": "项目",
+          "preview": "预览",
+          "previewOnly": "仅预览区",
+          "quote": "引用",
+          "quotedText": "引用文本",
+          "shortcuts": "快捷键",
+          "source": "源代码",
+          "sync": "同步滚动",
+          "toc": "目录",
+          "top": "回到顶部",
+          "ul": "无序列表",
+          "ulItem": "项目",
+          "words": "字数",
+          "write": "编辑",
+          "writeOnly": "仅编辑区",
+          "chars": "字符数"
+        }
+      }
+    })
+    editor.$on('change', e => {
+      editor.$set({ value: e.detail.value })
+    })
+  </script>
+</body>
+
+</html>
